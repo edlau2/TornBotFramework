@@ -66,17 +66,15 @@ class ExtensionManager:
 
     # constructor
     def __init__(self, bot):
-        #self.bot = bot
+        self.bot = bot
         self.loaded_extensions = []
         self.all_extensions = []
-        self.bot = commands.Bot(command_prefix=config.BOT_CONFIG['prefix'], description='Icarus')
 
     # Loads an extension and add to our lists of known and loaded extensions
     def load_local_extension(self, extension):
         self.all_extensions.append(extension)
         try:
-            # This is failing for some reason....
-            #self.bot.load_extension('cogs.{}'.format(extension))
+            self.bot.load_extension('cogs.{}'.format(extension))
             print('Loaded extension {}'.format(extension))
         except Exception as e:
             print('Failed to load extension {}: {}'.format(extension, e))
@@ -86,7 +84,7 @@ class ExtensionManager:
     # Unloads (stops) an extension and remove from our list of loaded extensions
     def unload_local_extension(self, extension):
         try:
-            self.bot.unload_extension(extension)
+            self.bot.unload_extension('cogs.{}'.format(extension))
             print('Unloaded extension {}'.format(extension))
         except Exception as e:
             print('Failed to unload extension {}: {}'.format(extension, e))
@@ -95,7 +93,11 @@ class ExtensionManager:
 
     # Reloads an extension, or load if not already loaded
     def reload_local_extension(self, extension):
-        return 'Not Yet Implemented'
+        if extension in self.loaded_extensions:
+            self.bot.reload_extension('cogs.{}'.format(extension))
+            return 'Extension {} reloaded'.format(extension)
+        # not loaded, so just load.
+        self.load_local_extension(all_extensions)
 
     # Lists loaded extensions
     def list_loaded_extensions(self):
