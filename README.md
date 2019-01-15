@@ -7,13 +7,13 @@ them.
 Cogs should be placed in a subdirectory called 'cogs' underneath where the main file, 
 TornBotFramework.py, resides.
 
-The main .py file requires a config file, config.py, which is noy included here as it contains t
-he secret token required for the bot to run.
+The main .py file requires a config file, config.py, which is not included here as it contains 
+the secret token required for the bot to run.
 
 config.py:
 
 BOT_CONFIG = {
-  "token": "<secret token>",
+  "token": "secret token",
   "prefix": "!"
 }
 

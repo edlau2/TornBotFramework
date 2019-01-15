@@ -1,2 +1,5 @@
 # Untracked files
 config.py
+__pycache__
+*.pyc
+*.suo
