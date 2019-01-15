@@ -5,7 +5,7 @@
 import discord
 from discord.ext import commands
 
-class Simplecog:
+class SimpleCog:
     """Boilerplate for a simple cog"""
 
     def __init__(self, bot):
@@ -18,4 +18,4 @@ class Simplecog:
         await self.bot.say("Hello, I am a simple cog!")
 
 def setup(bot):
-    bot.add_cog(Mycog(bot))
+    bot.add_cog(SimpleCog(bot))
