@@ -205,6 +205,25 @@ ch.add_command({
 #end hello command
 
 ##
+## Start of the !Hello comnmand. Just says "Hello" to whatever is args[0]
+##
+def bad_cmd_function(message,bot,args):
+    try:
+        return 'Unknown command entered. Try again!'
+    except Exception as e:
+        return e
+
+ch.add_command({
+    'trigger': '!bad_command',
+    'function': bad_cmd_function,
+    'args_num': 0,
+    'args_name': ['string'],
+    'description': 'Informs user of a bad command'
+})
+#end hello command
+
+
+##
 ## Start of the !ip command. This is an example of using
 ## HTTP, which will be usefull for interactimg with the Torn API
 ##
@@ -357,6 +376,9 @@ async def on_message(message):
             await ch.command_handler(message)
         # message doesn't contain a command trigger
         except TypeError as e:
+            # Unknown command
+            message.content = "!bad_command"
+            await ch.command_handler(message)
             pass
         # generic python error
         except Exception as e:
