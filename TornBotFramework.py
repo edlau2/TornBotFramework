@@ -378,7 +378,8 @@ async def on_message(message):
         except TypeError as e:
             # Unknown command
             message.content = "!bad_command"
-            await ch.command_handler(message)
+            # await ch.command_handler(message)
+            await bot.send_message(message.channel, 'This is another test')
             pass
         # generic python error
         except Exception as e:
