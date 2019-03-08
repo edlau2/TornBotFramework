@@ -17,4 +17,4 @@ BOT_CONFIG = {
   "prefix": "!"
 }
 
-A very simple cog that does pretty much nothing is also included to use as a baselene to build off of.
+A very simple cog that does pretty much nothing is also included to use as a baseline to build off of.
