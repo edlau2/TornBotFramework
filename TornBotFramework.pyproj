@@ -5,13 +5,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{51b54e20-3b28-44b9-a22e-91856e57a790}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>TornBotFramework.py</StartupFile>
+    <StartupFile>icarus.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
     <InterpreterId />
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -22,7 +23,9 @@
     <Compile Include="Cogs\simple_cog.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TornBotFramework.py" />
+    <Compile Include="icarus.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="config.py">
